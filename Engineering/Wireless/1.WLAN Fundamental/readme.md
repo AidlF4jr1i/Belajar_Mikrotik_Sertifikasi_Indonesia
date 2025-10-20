@@ -163,28 +163,12 @@ Terdapat **3 mode frequency** di Mikrotik:
 
 ---
 
-## Mengubah TX Power untuk Koneksi Lebih Baik
+## LAB 1 - Intro to regulatory-domain, manual tx-power, Superchannel
 
-**R1 Configuration:**
-```bash
-/interface wireless
-set [ find default-name=wlan1 ] band=2ghz-b/g/n country=indonesia disabled=no     frequency=2417 installation=indoor mode=ap-bridge radio-name="Router Ajie"     ssid=HOM123 tx-power=0 tx-power-mode=all-rates-fixed
-/interface wireless security-profiles
-set [ find default=yes ] supplicant-identity=MikroTik
-add authentication-types=wpa2-psk group-ciphers=tkip,aes-ccm mode=dynamic-keys     name=HOM123 supplicant-identity="" unicast-ciphers=tkip,aes-ccm     wpa2-pre-shared-key=PALEMBANG_2005
-```
+pada LAB kali ini kita akan menggunakan
 
-**R2 Configuration:**
-```bash
-/interface wireless
-set [ find default-name=wlan1 ] band=2ghz-b/g/n country=no_country_set     disabled=no frequency=2417 frequency-mode=manual-txpower installation=    indoor radio-name=R2 ssid=HOM123 tx-power=0 tx-power-mode=all-rates-fixed
-/interface wireless security-profiles
-set [ find default=yes ] supplicant-identity=MikroTik
-```
 
-Konfigurasi Diatas bertujuan untuk mengatur daya pancar (Transmit Power) pada kedua router (R1 dan R2) ke nilai spesifik yang tetap. Dengan menggunakan tx-power-mode=all-rates-fixed, daya pancar yang ditetapkan akan berlaku secara seragam untuk semua kecepatan data. Nilai tx-power=0 mengatur daya pancar ke 0 dBm, yang setara dengan 1 milliwatt (mW). Ini adalah tingkat daya yang sangat rendah. Akibatnya, sinyal nirkabel yang dipancarkan oleh kedua perangkat akan menjadi sangat lemah, sehingga jangkauan koneksi menjadi sangat pendek. Koneksi nirkabel antara R1 dan R2 kemungkinan besar akan tidak stabil atau bahkan gagal terhubung kecuali kedua perangkat diletakkan dalam jarak yang sangat berdekatan. Selain itu, perlu dicatat bahwa R2 tidak akan berhasil terhubung ke R1 karena konfigurasi profil keamanannya tidak cocok; R2 masih menggunakan profil default tanpa wpa2-pre-shared-key yang sesuai dengan yang diatur pada R1.
-
----
+## LAB 2 - mengubah TX-power untuk mendapat Resepsi Sinyal yang lebih baik
 
 ## Ringkasan Materi dan LABS
 
