@@ -17,4 +17,4 @@ Materi disusun berdasarkan pengalaman praktikum dan pelatihan, cocok untuk pemul
 - Wireless & Bridge
 - Simulasi soal dan studi kasus
 
-💡 Disarankan menggunakan Winbox atau GNS3/CHR untuk simulasi konfigurasi.
+💡 Disarankan menggunakan Winbox atau GNS3 or PNETLAB/CHR untuk simulasi konfigurasi.
